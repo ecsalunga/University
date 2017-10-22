@@ -1,0 +1,5 @@
+<ActionBar [title]="DL.TITLE" class="action-bar"></ActionBar>
+<StackLayout>
+    <SegmentedBar [items]="myItems" selectedIndex="0" (selectedIndexChange)="onSelectedIndexChange($event)" class="m-5"></SegmentedBar>
+    <ng-container #viewChild></ng-container>
+</StackLayout>
