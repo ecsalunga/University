@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
     @ViewChild('viewChild', {read: ViewContainerRef})
     viewChild: ViewContainerRef;
 
-    public myItems: Array<SegmentedBarItem>;
+    myItems: Array<SegmentedBarItem>;
 
     constructor(public core: Core, public DA: DataAccess, public DL: DataLayer) { 
         this.myItems = [];
