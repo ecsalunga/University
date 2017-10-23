@@ -11,7 +11,12 @@ export class RecipeDAL {
         firebase.query(fb => {
                 let item:RecipeInfo = fb.value;
                 item.id = fb.key;
-                this.DL.Recipes.push(item)
+
+                let exists = this.DL.Recipes.find(i => i.id == item.id);
+                if(exists == null)
+                    this.DL.Recipes.push(item)
+                else
+                    exists.Name = item.Name;
             },
             this.PATH,
                 { orderBy: {
@@ -22,6 +27,7 @@ export class RecipeDAL {
     }
 
     public Save(item: RecipeInfo) {
+        console.log("item: " + item.id + " " + item.Name);
         if(!item.id)
             firebase.push(this.PATH, item);
         else

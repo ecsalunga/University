@@ -1,5 +1,9 @@
-<ActionBar [title]="DL.TITLE" class="action-bar"></ActionBar>
+<ActionBar [title]="DL.TITLE" class="action-bar">
+    <ActionItem *ngIf="IsAdding()" (tap)="Cancel()" ios.systemIcon="1" ios.position="left"
+    android.systemIcon="ic_menu_close_clear_cancel"></ActionItem>
+    <ActionItem *ngIf="!IsAdding()" (tap)="Add()" ios.systemIcon="4" ios.position="right"
+    text="Add" android.position="popup"></ActionItem>
+</ActionBar>
 <StackLayout>
-    <SegmentedBar [items]="myItems" selectedIndex="0" (selectedIndexChange)="onSelectedIndexChange($event)" class="m-5"></SegmentedBar>
     <ng-container #viewChild></ng-container>
 </StackLayout>
