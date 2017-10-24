@@ -15,7 +15,7 @@ export class RecipeDetailComponent implements OnInit {
     if(this.DL.Recipe == null)
       this.model = new RecipeInfo();
     else
-      this.model = this.DL.Recipe;
+      this.model = Object.assign({}, this.DL.Recipe);
   }
 
   Save() {
