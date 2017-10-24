@@ -3,5 +3,10 @@
 TextField {
     border-bottom-width: 1px;
     border-color: silver;
-    height: 80px;
+    height: 100px;
+}
+
+ActionBar {
+    background-color: #2196f3;
+    color: white;
 }
