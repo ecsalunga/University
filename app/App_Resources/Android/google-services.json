@@ -13,12 +13,6 @@
           "package_name": "org.nativescript.university"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "628829598951-176tq44tiqcq69nfnm4dbsepef8ch6o2.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
       "api_key": [
         {
           "current_key": "AIzaSyBQ2riAMfVoPbX0Uv8UKICcpRsdiDoEVYg"
