@@ -9,19 +9,10 @@ import { DataLayer, DataAccess, RecipeInfo } from "../../data";
   styleUrls: ['./recipe-detail.component.scss']
 })
 export class RecipeDetailComponent implements OnInit {
-  public model: RecipeInfo;
 
   constructor(public core: Core, private DA: DataAccess, private DL: DataLayer) {
     if(this.DL.Recipe == null)
-      this.model = new RecipeInfo();
-    else
-      this.model = Object.assign({}, this.DL.Recipe);
-  }
-
-  Save() {
-    console.log(this.model.Name);
-    this.DA.RecipeSave(this.model);
-    this.core.LoadComponent("recipe-list");
+      this.DL.Recipe = new RecipeInfo();
   }
   
   ngOnInit() { 

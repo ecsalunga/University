@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
         this.core.LoadComponent(selector);
     }
     
-    public IsAdding(): boolean {
+    public IsDetail(): boolean {
         return this.core.selector == "recipe-detail";
     }
 
@@ -27,7 +27,16 @@ export class AppComponent implements OnInit {
         this.LoadComponent("recipe-detail");
     }
 
+    public Save() {
+        this.DA.RecipeSave();
+        this.loadList();
+    }
+
     public Cancel() {
+        this.loadList();
+    }
+
+    private loadList() {
         this.LoadComponent("recipe-list");
     }
 
@@ -35,6 +44,6 @@ export class AppComponent implements OnInit {
         this.DA.Load();
         this.DL.TITLE = "Recipe Helper";
         this.core.viewChild = this.viewChild;
-        this.LoadComponent("recipe-list");
+        this.loadList();
     }
 }

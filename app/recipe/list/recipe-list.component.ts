@@ -13,7 +13,7 @@ export class RecipeListComponent implements OnInit {
   constructor(public core: Core, private DL: DataLayer) {}
 
   public onItemTap(args) {
-    this.DL.Recipe = this.DL.Recipes[args.index];
+    this.DL.Recipe = Object.assign({}, this.DL.Recipes[args.index]);
     this.core.LoadComponent("recipe-detail");
   }
 

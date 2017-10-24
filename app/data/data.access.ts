@@ -15,7 +15,7 @@ export class DataAccess {
         this.RecipeDAL.Load();
     }
 
-    public RecipeSave(item: RecipeInfo) {
-        this.RecipeDAL.Save(item);
+    public RecipeSave() {
+        this.RecipeDAL.Save(this.DL.Recipe);
     }
 }

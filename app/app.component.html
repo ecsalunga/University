@@ -1,8 +1,10 @@
 <ActionBar [title]="DL.TITLE" class="action-bar">
-    <ActionItem *ngIf="IsAdding()" (tap)="Cancel()" ios.systemIcon="1" ios.position="left"
+    <ActionItem *ngIf="IsDetail()" (tap)="Cancel()" ios.systemIcon="1" ios.position="left"
     android.systemIcon="ic_menu_close_clear_cancel"></ActionItem>
-    <ActionItem *ngIf="!IsAdding()" (tap)="Add()" ios.systemIcon="4" ios.position="right"
+    <ActionItem *ngIf="!IsDetail()" (tap)="Add()" ios.systemIcon="4" ios.position="right"
     android.systemIcon="ic_menu_add" android.position="actionBar"></ActionItem>
+    <ActionItem *ngIf="IsDetail()" (tap)="Save()" ios.systemIcon="3" ios.position="right"
+    android.systemIcon="ic_menu_Save" android.position="actionBar"></ActionItem>
 </ActionBar>
 <StackLayout>
     <ng-container #viewChild></ng-container>

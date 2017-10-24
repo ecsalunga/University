@@ -15,8 +15,12 @@ export class RecipeDAL {
                     let exists = this.DL.Recipes.find(i => i.id == item.id);
                     if(exists == null)
                         this.DL.Recipes.push(item)
-                    else
-                        exists.Name = item.Name;
+                    else {
+                        this.DL.Recipes = this.DL.Recipes.filter(i => i.id != exists.id)
+                        this.DL.Recipes.push(item);
+                    }
+
+                    this.DL.Recipes.sort((item1, item2) => item1.Name.localeCompare(item2.Name));
                 });
             },
             this.PATH,
@@ -28,7 +32,7 @@ export class RecipeDAL {
     }
 
     public Save(item: RecipeInfo) {
-        console.log("item: " + item.id + " " + item.Name);
+        console.log("item: " + item.id + " " + item.Name + " " + item.Description);
         if(!item.id)
             firebase.push(this.PATH, item);
         else
