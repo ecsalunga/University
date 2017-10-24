@@ -2,7 +2,7 @@
     <ActionItem *ngIf="IsAdding()" (tap)="Cancel()" ios.systemIcon="1" ios.position="left"
     android.systemIcon="ic_menu_close_clear_cancel"></ActionItem>
     <ActionItem *ngIf="!IsAdding()" (tap)="Add()" ios.systemIcon="4" ios.position="right"
-    text="Add" android.position="popup"></ActionItem>
+    android.systemIcon="ic_menu_add" android.position="actionBar"></ActionItem>
 </ActionBar>
 <StackLayout>
     <ng-container #viewChild></ng-container>

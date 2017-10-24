@@ -35,5 +35,6 @@ export class AppComponent implements OnInit {
         this.DA.Load();
         this.DL.TITLE = "Recipe Helper";
         this.core.viewChild = this.viewChild;
+        this.LoadComponent("recipe-list");
     }
 }

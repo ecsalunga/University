@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, NgZone } from '@angular/core';
 import { Core } from "../core";
 import { RecipeInfo } from "./";
 
@@ -9,7 +9,7 @@ export class DataLayer {
     Recipe: RecipeInfo;
     Recipes: Array<RecipeInfo>;
 
-    constructor(private core: Core) {}
+    constructor(private core: Core, public ngZone: NgZone) {}
 
     public LoadComponent(selector: string) {
         this.core.LoadComponent(selector);

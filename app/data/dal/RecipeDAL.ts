@@ -11,12 +11,13 @@ export class RecipeDAL {
         firebase.query(fb => {
                 let item:RecipeInfo = fb.value;
                 item.id = fb.key;
-
-                let exists = this.DL.Recipes.find(i => i.id == item.id);
-                if(exists == null)
-                    this.DL.Recipes.push(item)
-                else
-                    exists.Name = item.Name;
+                this.DL.ngZone.run(() => {
+                    let exists = this.DL.Recipes.find(i => i.id == item.id);
+                    if(exists == null)
+                        this.DL.Recipes.push(item)
+                    else
+                        exists.Name = item.Name;
+                });
             },
             this.PATH,
                 { orderBy: {
