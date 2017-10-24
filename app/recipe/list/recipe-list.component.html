@@ -1,7 +1,7 @@
-<ListView [items]="countries" class="list-group">
-    <ng-template let-country="item" let-i="index">
-        <GridLayout class="list-group-item" (tap)="SelectItem(country)">
-            <Label [text]="country.Name"></Label>
-        </GridLayout>
+<ListView height="100%" [items]="DL.Recipes" (itemTap)="onItemTap($event)" class="list-group">
+    <ng-template let-recipe="item" let-i="index">
+        <StackLayout class="list-group-item">
+            <Label [text]="recipe.Name"></Label>
+        </StackLayout>
     </ng-template>
 </ListView>

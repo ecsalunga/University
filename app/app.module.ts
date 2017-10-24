@@ -1,5 +1,6 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
+import { NativeScriptFormsModule } from "nativescript-angular/forms"
 import { AppComponent } from "./app.component";
 import { Core } from "./core";
 import { DataAccess, DataLayer } from "./data";
@@ -10,19 +11,19 @@ import { DataAccess, DataLayer } from "./data";
 // Uncomment and add to NgModule imports  if you need to use the HTTP wrapper
 // import { NativeScriptHttpModule } from "nativescript-angular/http";
 import { RecipeListComponent } from "./recipe/list/recipe-list.component";
-import { RecipeLocalComponent } from "./recipe/local/recipe-local.component";
-
+import { RecipeDetailComponent } from "./recipe/detail/recipe-detail.component";
 @NgModule({
     bootstrap: [
         AppComponent
     ],
     imports: [
-        NativeScriptModule
+        NativeScriptModule,
+        NativeScriptFormsModule
     ],
     declarations: [
         AppComponent,
         RecipeListComponent,
-        RecipeLocalComponent
+        RecipeDetailComponent
     ],
     providers: [
         Core,
@@ -31,7 +32,7 @@ import { RecipeLocalComponent } from "./recipe/local/recipe-local.component";
     ],
     entryComponents: [
         RecipeListComponent,
-        RecipeLocalComponent
+        RecipeDetailComponent
     ],
     schemas: [
         NO_ERRORS_SCHEMA

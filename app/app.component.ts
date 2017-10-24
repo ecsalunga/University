@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild, ViewContainerRef } from "@angular/core";
 import { Core } from "./core";
 import { DataLayer, DataAccess, RecipeInfo } from "./data";
-import { SegmentedBar, SegmentedBarItem } from "ui/segmented-bar";
 
 @Component({
     selector: "ns-app",
@@ -13,34 +12,23 @@ export class AppComponent implements OnInit {
     @ViewChild('viewChild', {read: ViewContainerRef})
     viewChild: ViewContainerRef;
 
-    myItems: Array<SegmentedBarItem>;
-
-    constructor(public core: Core, public DA: DataAccess, public DL: DataLayer) { 
-        this.myItems = [];
-        let item = new SegmentedBarItem();
-        item.title = "Local Recipes";
-        this.myItems.push(item);
-
-        item = new SegmentedBarItem();
-        item.title = "Online Recipes";
-        this.myItems.push(item);
-    }
+    constructor(public core: Core, public DA: DataAccess, public DL: DataLayer) { }
 
     public LoadComponent(selector: string) {
         this.core.LoadComponent(selector);
     }
-
-    Save() {
-        let recipe = new RecipeInfo("Adobo");
+    
+    public IsAdding(): boolean {
+        return this.core.selector == "recipe-detail";
     }
 
-    public onSelectedIndexChange(args) {
-        let segmetedBar = <SegmentedBar>args.object;
+    public Add() {
+        this.DL.Recipe = null;
+        this.LoadComponent("recipe-detail");
+    }
 
-        if(segmetedBar.selectedIndex == 0)
-            this.LoadComponent("recipe-local");
-        else
-            this.LoadComponent("recipe-list");
+    public Cancel() {
+        this.LoadComponent("recipe-list");
     }
 
     ngOnInit() {
