@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "628829598951",
+    "firebase_url": "https://university-days.firebaseio.com",
+    "project_id": "university-days",
+    "storage_bucket": "university-days.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:628829598951:android:893442b0126f643a",
+        "android_client_info": {
+          "package_name": "org.nativescript.university"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "628829598951-176tq44tiqcq69nfnm4dbsepef8ch6o2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQ2riAMfVoPbX0Uv8UKICcpRsdiDoEVYg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

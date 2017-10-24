@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>628829598951-med81p6mi5mfjuoepfnstg9d7s15ahea.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.628829598951-med81p6mi5mfjuoepfnstg9d7s15ahea</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAw7G28PHTd_gOdE5Abq0e_Y4WlUDQ2_q4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>628829598951</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>org.nativescript.university</string>
+	<key>PROJECT_ID</key>
+	<string>university-days</string>
+	<key>STORAGE_BUCKET</key>
+	<string>university-days.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:628829598951:ios:893442b0126f643a</string>
+	<key>DATABASE_URL</key>
+	<string>https://university-days.firebaseio.com</string>
+</dict>
+</plist>
