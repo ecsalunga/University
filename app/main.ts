@@ -4,6 +4,7 @@ import { platformNativeScriptDynamic } from "nativescript-angular/platform";
 import { AppModule } from "./app.module";
 import firebase = require("nativescript-plugin-firebase");
 firebase.init({
+    storageBucket: 'gs://university-days.appspot.com'
     // Optionally pass in properties for database, authentication and cloud messaging,
     // see their respective docs.
   }).then(

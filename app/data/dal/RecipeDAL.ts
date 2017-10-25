@@ -32,7 +32,6 @@ export class RecipeDAL {
     }
 
     public Save(item: RecipeInfo) {
-        console.log("item: " + item.id + " " + item.Name + " " + item.Description);
         if(!item.id)
             firebase.push(this.PATH, item);
         else

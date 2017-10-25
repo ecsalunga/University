@@ -1,4 +1,5 @@
 <StackLayout>
     <TextField hint="Name" [(ngModel)]="DL.Recipe.Name"></TextField>
     <TextField hint="Description" [(ngModel)]="DL.Recipe.Description"></TextField>
+    <Image (tap)="SelectImage()" [src]="imageURL"></Image> 
 </StackLayout>
