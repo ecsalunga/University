@@ -12,6 +12,7 @@ import { DataAccess, DataLayer } from "./data";
 // import { NativeScriptHttpModule } from "nativescript-angular/http";
 import { RecipeListComponent } from "./recipe/list/recipe-list.component";
 import { RecipeDetailComponent } from "./recipe/detail/recipe-detail.component";
+
 @NgModule({
     bootstrap: [
         AppComponent

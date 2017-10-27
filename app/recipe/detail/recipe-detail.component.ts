@@ -60,14 +60,12 @@ export class RecipeDetailComponent implements OnInit {
               }
             }).then(
               (uploadedFile) => {
-                this.DL.ngZone.run(() => {
-                  let uploaded = JSON.parse(JSON.stringify(uploadedFile));
-                  this.imageURL = uploaded.url;
-                  this.DL.Recipe.ImageURL = uploaded.url;
-                });
+                let uploaded = JSON.parse(JSON.stringify(uploadedFile));
+                this.imageURL = uploaded.url;
+                this.DL.Recipe.ImageURL = uploaded.url;
               },
               (error) => {
-                  console.log("File upload error: " + error);
+                console.log("File upload error: " + error);
               }
             );
         });
@@ -75,6 +73,18 @@ export class RecipeDetailComponent implements OnInit {
     }).catch((e) => {
         // process error
     });
+  }
+
+  public Login() {
+    firebase.login({
+      type: firebase.LoginType.FACEBOOK
+    }).then((result) => {
+        console.log(JSON.stringify(result));
+      },
+      (errorMessage) => {
+        console.log("error: " + errorMessage);
+      }
+    );
   }
   
   ngOnInit() { 

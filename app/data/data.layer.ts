@@ -5,6 +5,9 @@ import { RecipeInfo } from "./";
 @Injectable()
 export class DataLayer {
     TITLE: string;
+    User: any;
+    UserID: string = "n/a";
+
     NO_IMAGE_URL: string = "res://images/noimage";
     DATA_UploadStatus: Number;
 

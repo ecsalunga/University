@@ -1,4 +1,6 @@
 <StackLayout>
+    <button text="Facebook" (tap)="Login()"></button>
+    <Label [text]="DL.UserID"></Label> 
     <TextField hint="Name" [(ngModel)]="DL.Recipe.Name"></TextField>
     <TextField hint="Description" [(ngModel)]="DL.Recipe.Description"></TextField>
     <Image (tap)="SelectImage()" [src]="imageURL"></Image> 
