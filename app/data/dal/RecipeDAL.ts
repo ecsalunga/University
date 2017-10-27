@@ -9,22 +9,22 @@ export class RecipeDAL {
     public Load() {
         this.DL.Recipes = new Array<RecipeInfo>();
         firebase.query(fb => {
-                let item:RecipeInfo = fb.value;
-                item.id = fb.key;
-                this.DL.ngZone.run(() => {
-                    let exists = this.DL.Recipes.find(i => i.id == item.id);
-                    if(exists == null)
-                        this.DL.Recipes.push(item)
-                    else {
-                        this.DL.Recipes = this.DL.Recipes.filter(i => i.id != exists.id)
-                        this.DL.Recipes.push(item);
-                    }
+            let item:RecipeInfo = fb.value;
+            item.id = fb.key;
+            this.DL.ngZone.run(() => {
+                let exists = this.DL.Recipes.find(i => i.id == item.id);
+                if(exists == null)
+                    this.DL.Recipes.push(item)
+                else {
+                    this.DL.Recipes = this.DL.Recipes.filter(i => i.id != exists.id)
+                    this.DL.Recipes.push(item);
+                }
 
-                    this.DL.Recipes.sort((item1, item2) => item1.Name.localeCompare(item2.Name));
-                });
-            },
-            this.PATH,
-                { orderBy: {
+                this.DL.Recipes.sort((item1, item2) => item1.Name.localeCompare(item2.Name));
+            });
+        },
+        this.PATH,
+            { orderBy: {
                 type: firebase.QueryOrderByType.CHILD,
                 value: 'Name'
             }

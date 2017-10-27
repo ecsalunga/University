@@ -70,8 +70,6 @@ export class RecipeDetailComponent implements OnInit {
             );
         });
       });
-    }).catch((e) => {
-        // process error
     });
   }
 
