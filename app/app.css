@@ -3,6 +3,10 @@
 TextField {
     border-bottom-width: 1px;
     border-color: silver;
+    height: 90px;
+}
+
+.android TextField {
     height: 125px;
 }
 

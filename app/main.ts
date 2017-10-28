@@ -1,8 +1,9 @@
 // this import should be first in order to load some required settings (like globals and reflect-metadata)
 import { platformNativeScriptDynamic } from "nativescript-angular/platform";
-
+require("nativescript-platform-css");
 import { AppModule } from "./app.module";
 import firebase = require("nativescript-plugin-firebase");
+
 firebase.init({
     storageBucket: 'gs://university-days.appspot.com'
     // Optionally pass in properties for database, authentication and cloud messaging,
