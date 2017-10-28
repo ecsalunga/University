@@ -2,7 +2,7 @@
     <ActionItem (tap)="Cancel()" ios.systemIcon="1" ios.position="left"
     android.systemIcon="ic_menu_close_clear_cancel"></ActionItem>
     <ActionItem *ngIf="isEditing" (tap)="StopEdit()" ios.systemIcon="0" ios.position="right"
-    android.systemIcon="ic_menu_done" android.position="actionBar"></ActionItem>
+    text="Done" android.position="actionBar"></ActionItem>
     <ActionItem *ngIf="!isEditing" (tap)="Save()" ios.systemIcon="3" ios.position="right"
     android.systemIcon="ic_menu_save" android.position="actionBar"></ActionItem>
 </ActionBar>
