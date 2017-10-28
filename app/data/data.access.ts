@@ -26,7 +26,7 @@ export class DataAccess {
             onAuthStateChanged: (data) => {
               console.log(data.loggedIn ? "Logged in to firebase" : "Logged out from firebase");
               if (data.loggedIn) {
-                console.log("User info", data.user);
+                console.log("User info", data.user.uid);
                 this.DL.User = data.user;
                 this.DL.UserID = data.user.uid;
               }
