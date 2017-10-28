@@ -18,9 +18,14 @@ export class AppComponent implements OnInit {
         this.core.LoadComponent(selector);
     }
 
+    public Online() {
+        this.LoadComponent("recipe-list");
+    }
+
     ngOnInit() {
         this.DA.Load();
         this.core.viewChild = this.viewChild;
-        this.LoadComponent("recipe-list");
+        this.DL.TITLE = "Home";
+        //this.LoadComponent("recipe-list");
     }
 }

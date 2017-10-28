@@ -1,1 +1,12 @@
-<ng-container #viewChild></ng-container>
+<ActionBar [title]="DL.TITLE"></ActionBar>
+<StackLayout>
+    <ScrollView class="main">
+        <ng-container #viewChild></ng-container>
+    </ScrollView>
+    
+    <FlexboxLayout class="tab" justifyContent="space-around">
+        <Button text="Load Recipe" (tap)="Online()"></Button>
+        <Button text="Button 2"></Button>
+        <Button text="Button 3"></Button>
+    </FlexboxLayout>
+</StackLayout>
