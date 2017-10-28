@@ -10,6 +10,12 @@ TextField {
     height: 125px;
 }
 
+TextView {
+    border-bottom-width: 1px;
+    border-color: silver;
+    height: 300px;
+}
+
 ActionBar {
     background-color: #2196f3;
     color: white;

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TextView } from "ui/text-view";
 import { isIOS } from "platform";
 import { Core } from "../../core";
 import { DataLayer, DataAccess, RecipeInfo } from "../../data";
@@ -13,7 +14,9 @@ import fs = require('file-system')
   styleUrls: ['./recipe-detail.component.scss']
 })
 export class RecipeDetailComponent implements OnInit {
-  imageURL: string
+  imageURL: string;
+  isEditing: boolean = false;
+  editingTextView: TextView;
 
   constructor(public core: Core, private DA: DataAccess, private DL: DataLayer) {
     if(this.DL.Recipe == null) {
@@ -26,9 +29,19 @@ export class RecipeDetailComponent implements OnInit {
     this.imageURL = this.DL.Recipe.ImageURL;
   }
 
+  public StartEdit(args) {
+    this.editingTextView = <TextView>args.object;
+    this.isEditing = true;
+  }
+
+  public StopEdit() {
+    this.isEditing = false;
+    this.editingTextView.dismissSoftInput();
+  }
+
   public SelectImage() {
     let context = imagepicker.create({
-      mode: "single" // use "multiple" for multiple selection
+      mode: "single"
     });
 
     context.authorize()
@@ -83,6 +96,23 @@ export class RecipeDetailComponent implements OnInit {
         console.log("error: " + errorMessage);
       }
     );
+  }
+
+  public LoadComponent(selector: string) {
+    this.core.LoadComponent(selector);
+  }
+
+  public Save() {
+    this.DA.RecipeSave();
+    this.loadList();
+  }
+
+  public Cancel() {
+    this.loadList();
+  }
+
+  private loadList() {
+    this.LoadComponent("recipe-list");
   }
   
   ngOnInit() { 

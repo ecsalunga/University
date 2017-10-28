@@ -10,11 +10,20 @@ import { DataLayer, RecipeInfo } from "../../data";
 })
 export class RecipeListComponent implements OnInit {
 
-  constructor(public core: Core, private DL: DataLayer) {}
+  constructor(private core: Core, private DL: DataLayer) {}
 
   public onItemTap(args) {
     this.DL.Recipe = Object.assign({}, this.DL.Recipes[args.index]);
     this.core.LoadComponent("recipe-detail");
+  }
+
+  public LoadComponent(selector: string) {
+    this.core.LoadComponent(selector);
+  }
+
+  public Add() {
+    this.DL.Recipe = null;
+    this.LoadComponent("recipe-detail");
   }
 
   ngOnInit() { 
